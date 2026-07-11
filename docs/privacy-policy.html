@@ -41,12 +41,11 @@
     }
 
     .container {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       padding: 52px 24px 90px;
     }
 
-    /* Updated badge */
     .meta {
       display: flex;
       align-items: center;
@@ -68,7 +67,6 @@
       border-radius: 20px;
     }
 
-    /* TL;DR green box */
     .summary-box {
       background: rgba(16,185,129,0.07);
       border: 1px solid rgba(16,185,129,0.22);
@@ -104,7 +102,6 @@
       margin-top: 8px;
     }
 
-    /* Warning / notice box */
     .notice-box {
       background: rgba(245,158,11,0.08);
       border: 1px solid rgba(245,158,11,0.25);
@@ -118,7 +115,6 @@
 
     .notice-box strong { color: #fcd34d; }
 
-    /* Sections */
     section { margin-bottom: 44px; }
 
     section h2 {
@@ -156,7 +152,17 @@
       line-height: 1.5;
     }
 
-    /* Permission table */
+    a { color: #a78bfa; }
+
+    code {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 1px 6px;
+      color: #e9d5ff;
+      font-size: 0.92em;
+    }
+
     .perm-table {
       width: 100%;
       border-collapse: collapse;
@@ -164,9 +170,7 @@
       font-size: 14px;
     }
 
-    .perm-table thead tr {
-      background: rgba(124,58,237,0.2);
-    }
+    .perm-table thead tr { background: rgba(124,58,237,0.2); }
 
     .perm-table th {
       text-align: left;
@@ -183,6 +187,7 @@
       color: rgba(255,255,255,0.65);
       border-bottom: 1px solid rgba(255,255,255,0.06);
       line-height: 1.6;
+      vertical-align: top;
     }
 
     .perm-table tr:last-child td { border-bottom: none; }
@@ -195,12 +200,13 @@
       padding: 2px 8px;
       border-radius: 10px;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .tag-none { background: rgba(16,185,129,0.15); color: #6ee7b7; }
     .tag-limited { background: rgba(245,158,11,0.15); color: #fcd34d; }
+    .tag-third { background: rgba(96,165,250,0.15); color: #93c5fd; }
 
-    /* Highlight block */
     .highlight {
       background: rgba(124,58,237,0.1);
       border-left: 3px solid #7C3AED;
@@ -212,7 +218,6 @@
       line-height: 1.75;
     }
 
-    /* Contact */
     .contact-box {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.09);
@@ -253,58 +258,107 @@
 
 <header>
   <div class="icon">🎮</div>
-  <h1>Tic Tac Toe, Connect 4, Boxes</h1>
+  <h1>BoardBox</h1>
   <p>Privacy Policy</p>
 </header>
 
 <div class="container">
+  <div class="meta">
+    <span class="badge">Last updated: July 11, 2026</span>
+    <span class="badge">Package: com.logicx.boardgame</span>
+  </div>
 
+  <div class="summary-box">
+    <h2>Quick Summary</h2>
+    <ul>
+      <li><span class="dot"></span><span>BoardBox does not require an account, email address, contacts, photos, or precise location.</span></li>
+      <li><span class="dot"></span><span>Player names, onboarding status, and sound preferences are stored locally on your device.</span></li>
+      <li><span class="dot"></span><span>The app uses Google AdMob to show ads and Google User Messaging Platform to request consent where required.</span></li>
+      <li><span class="dot"></span><span>The app uses Firebase Crashlytics to help us detect crashes and improve stability.</span></li>
+    </ul>
+  </div>
 
-
-  <!-- 1. About the App -->
   <section>
     <h2>1. About This App</h2>
     <p>
-      <strong>Tic Tac Toe, Connect 4, Boxes</strong> is a free, offline-first board games app developed by LogicX Universe
-      (package: <code>com.logicx.boardgame</code>). It includes three classic games: Tic Tac Toe,
-      Connect Four, and Dots and Boxes. This Privacy Policy describes what data the app accesses,
-      why, and how it is handled.
+      <strong>BoardBox</strong> is a free board games app developed by LogicX Universe. It includes
+      Tic Tac Toe, Connect Four, and Dots and Boxes. This Privacy Policy explains what information
+      is handled by the app, why it is used, and what third-party services are involved.
     </p>
     <p>
-      By installing or using Tic Tac Toe, Connect 4, Boxes, you agree to the terms of this Privacy Policy.
+      By installing or using BoardBox, you agree to the practices described in this Privacy Policy.
     </p>
   </section>
 
-  <!-- 2. Data We Collect -->
   <section>
-    <h2>2. Data We Collect</h2>
+    <h2>2. Information Stored Locally on Your Device</h2>
     <p>
-      <strong>Tic Tac Toe, Connect 4, Boxes does not collect any personal data.</strong> We do not operate any servers,
-      databases, or backend services that receive data from your device.
+      BoardBox stores a small amount of app data locally on your device using device storage. This
+      local data is used only to make the app work smoothly.
     </p>
-    <p>The only data the app handles is stored entirely on your device:</p>
     <ul>
-      <li>Player names you optionally type before a match (max 12 characters, stored in device-local AsyncStorage)</li>
-      <li>Round scores within a session (kept in memory only, cleared when the app closes)</li>
+      <li>Player name you enter in onboarding or profile settings.</li>
+      <li>Whether onboarding has been completed.</li>
+      <li>Your sound on/off preference.</li>
+      <li>Game state and scores during active gameplay sessions.</li>
     </ul>
     <div class="highlight">
-      This data never leaves your device. It is not uploaded, shared, or accessible to us or any third party.
-      Uninstalling the app permanently removes all locally stored data.
+      Locally stored gameplay/profile settings are not uploaded to our own servers. Uninstalling
+      the app removes this local app data from your device.
     </div>
   </section>
 
-  <!-- 3. Permissions -->
   <section>
-    <h2>3. App Permissions — What We Use and Why</h2>
+    <h2>3. Advertising and Consent</h2>
     <p>
-      Tic Tac Toe, Connect 4, Boxes requests exactly two Android permissions. The table below explains the reason
-      for each one and whether any data is transmitted as a result.
+      BoardBox uses <strong>Google AdMob</strong> to display banner and interstitial ads. The app is
+      currently configured to request non-personalized ads. Google and its advertising partners may
+      still process information such as device identifiers, advertising ID, IP address, approximate
+      location derived from IP address, device information, ad interactions, and diagnostic information
+      for purposes such as ad delivery, frequency capping, measurement, fraud prevention, and compliance.
+    </p>
+    <p>
+      Where required by law or Google policy, BoardBox uses Google's <strong>User Messaging Platform
+      (UMP)</strong> to request your consent for ads and related data processing. Depending on your
+      region and choices, ads may be non-personalized, limited, or not shown.
+    </p>
+    <p>
+      You can also manage advertising choices through your Android device settings, including
+      resetting or deleting your advertising ID where supported by your device.
+    </p>
+    <div class="notice-box">
+      <strong>Important:</strong> We do not directly receive your Google advertising profile or
+      a list of ads you personally see. Ad serving and consent handling are managed by Google
+      AdMob and Google's SDKs.
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Crash Reporting</h2>
+    <p>
+      BoardBox uses <strong>Firebase Crashlytics</strong> to detect crashes, understand stability
+      problems, and improve the app. Crash reports may include crash stack traces, app version,
+      operating system version, device model, device state at the time of the crash, timestamps,
+      and installation identifiers such as a Firebase installation ID or Crashlytics installation UUID.
+    </p>
+    <p>
+      Crashlytics reports are used for diagnostics and app improvement. They are processed by
+      Google Firebase according to Google's Firebase terms and privacy practices.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. App Permissions — What We Use and Why</h2>
+    <p>
+      The exact permissions in an Android build may include permissions required by the app itself
+      and permissions automatically added by Google SDKs used for ads, crash reporting, and platform
+      services. The main permissions are explained below.
     </p>
 
     <table class="perm-table">
       <thead>
         <tr>
-          <th>Permission</th>
+          <th>Permission / Access</th>
           <th>Why it is used</th>
           <th>Data transmitted?</th>
         </tr>
@@ -312,84 +366,130 @@
       <tbody>
         <tr>
           <td><strong>INTERNET</strong></td>
-          <td>Required by the Google Play In-App Review API to display a native review prompt after gameplay. No data is sent to us — this is handled entirely by Google's system.</td>
-          <td><span class="tag tag-none">None to us</span></td>
+          <td>Required for Google AdMob ads, consent messages, Firebase Crashlytics reports, and Google Play services.</td>
+          <td><span class="tag tag-third">To Google SDKs</span></td>
+        </tr>
+        <tr>
+          <td><strong>ACCESS_NETWORK_STATE</strong></td>
+          <td>Used by Google SDKs to understand network availability before loading ads or sending crash reports.</td>
+          <td><span class="tag tag-limited">Limited</span></td>
+        </tr>
+        <tr>
+          <td><strong>AD_ID / Ad Services permissions</strong></td>
+          <td>Used by Google advertising services for ad delivery, measurement, fraud prevention, and privacy-preserving ad features on supported Android versions.</td>
+          <td><span class="tag tag-third">To Google SDKs</span></td>
         </tr>
         <tr>
           <td><strong>VIBRATE</strong></td>
-          <td>Powers haptic feedback (tactile vibration) on moves, wins, and menu interactions via expo-haptics. Operates entirely on-device.</td>
+          <td>Used for haptic feedback during moves, wins, and menu interactions.</td>
           <td><span class="tag tag-none">None</span></td>
+        </tr>
+        <tr>
+          <td><strong>MODIFY_AUDIO_SETTINGS</strong></td>
+          <td>Used by the audio library to play in-game sound effects correctly.</td>
+          <td><span class="tag tag-none">None to us</span></td>
+        </tr>
+        <tr>
+          <td><strong>WAKE_LOCK</strong></td>
+          <td>May be added by Google Play services or Firebase components to complete short background operations reliably.</td>
+          <td><span class="tag tag-limited">Limited</span></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="notice-box">
-      <strong>Note on INTERNET permission:</strong> Although the app requests INTERNET access, all three
-      games function 100% offline. Internet is used solely by the Google Play In-App Review API
-      to show a native review dialog. This is a Google-managed process — we do not receive, log,
-      or store any information from this interaction.
-    </div>
   </section>
 
-
-
-  <!-- 4. Data Sharing -->
   <section>
-    <h2>4. Data Sharing and Disclosure</h2>
+    <h2>6. Third-Party Services</h2>
+    <p>BoardBox uses the following third-party services:</p>
+    <ul>
+      <li><strong>Google AdMob</strong> — used to show ads and measure ad performance.</li>
+      <li><strong>Google User Messaging Platform</strong> — used to request and manage ad consent where required.</li>
+      <li><strong>Firebase Crashlytics</strong> — used to collect crash diagnostics and improve app stability.</li>
+      <li><strong>Google Play Services</strong> — used for Android platform services such as ads, app review, and related Google SDK functionality.</li>
+    </ul>
     <p>
-      We do not sell, trade, rent, or share any user data with third parties — because we do not
-      collect any user data in the first place.
+      These services are provided by Google and are governed by Google's privacy practices. You can
+      learn more from the following resources:
     </p>
-    <p>
-      The only external system the app communicates with is the Google Play In-App Review API,
-      which is governed by Google's own privacy terms. We have no visibility into or control
-      over what Google collects through that API.
-    </p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><a href="https://developers.google.com/admob/android/privacy" target="_blank" rel="noopener">Google AdMob privacy and UMP information</a></li>
+      <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and security information</a></li>
+    </ul>
   </section>
 
-  <!-- 5. Children's Privacy -->
   <section>
-    <h2>5. Children's Privacy</h2>
+    <h2>7. Data Sharing and Disclosure</h2>
     <p>
-      Tic Tac Toe, Connect 4, Boxes is rated for users aged <strong>13 and over</strong> on Google Play. The app does
-      not knowingly collect personal information from children under 13.
+      We do not sell your personal information. We do not operate our own backend database for player
+      profiles or gameplay history.
     </p>
     <p>
-      Because the app collects no personal data whatsoever and requires no account creation,
-      it is safe for all ages in practice. If you are a parent or guardian with concerns,
-      please contact us at the address below.
+      Data may be processed by Google services integrated into the app, including AdMob and Firebase
+      Crashlytics, as described above. We may also disclose information if required by law, regulation,
+      legal process, or enforceable government request.
     </p>
   </section>
 
-  <!-- 6. Data Security -->
   <section>
-    <h2>6. Data Security</h2>
+    <h2>8. Children's Privacy</h2>
     <p>
-      Since Tic Tac Toe, Connect 4, Boxes does not collect or transmit personal data, there is no personal data
-      at risk of a breach on our end. The small amount of local data stored on your device
-      (optional player names) is protected by your device's own security mechanisms,
-      including screen lock and Android's app sandboxing.
+      BoardBox is intended for users aged <strong>13 and over</strong>. The app does not knowingly
+      collect personal information from children under 13, and it does not require account creation.
+    </p>
+    <p>
+      If you are a parent or guardian and believe a child has provided personal information through
+      the app, please contact us so we can review the concern.
     </p>
   </section>
 
-
-  <!-- 7. Contact -->
   <section>
-    <h2>7. Contact Us</h2>
+    <h2>9. Data Retention</h2>
+    <p>
+      Local app preferences remain on your device until you clear app data or uninstall the app.
+      Session gameplay scores are temporary and may be cleared when the app closes or the game resets.
+    </p>
+    <p>
+      Firebase Crashlytics data is retained by Google Firebase according to Firebase's retention
+      practices. Google's Firebase privacy documentation states that Crashlytics crash stack traces,
+      minidump data, and associated identifiers are retained for a limited period before deletion
+      from live and backup systems.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Data Security</h2>
+    <p>
+      We use reputable third-party services provided by Google for ads, consent, and crash reporting.
+      Local app data is protected by Android's app sandbox and your device security settings. However,
+      no method of electronic transmission or storage is completely secure.
+    </p>
+  </section>
+
+  <section>
+    <h2>11. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time, especially when app features or third-party
+      services change. Updated versions will be posted on this page with a revised “Last updated” date.
+    </p>
+  </section>
+
+  <section>
+    <h2>12. Contact Us</h2>
     <p>
       If you have any questions, concerns, or requests relating to this Privacy Policy, please contact:
     </p>
     <div class="contact-box">
-      <p>Developer &mdash; LogicX Universe</p>
-      <p>App &mdash; Tic Tac Toe, Connect 4, Boxes (com.logicx.boardgame)</p>
+      <p>Developer — LogicX Universe</p>
+      <p>App — BoardBox (com.logicx.boardgame)</p>
       <a href="mailto:devdive96@gmail.com">devdive96@gmail.com</a>
     </div>
   </section>
-
 </div>
 
 <footer>
-  © 2026 Tic Tac Toe, Connect 4, Boxes &nbsp;·&nbsp; com.logicx.boardgame &nbsp;·&nbsp; Built by LogicX Universe
+  © 2026 BoardBox · com.logicx.boardgame · Built by LogicX Universe
 </footer>
 
 </body>
